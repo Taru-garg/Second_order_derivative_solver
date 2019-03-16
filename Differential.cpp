@@ -46,7 +46,10 @@ double differential :: calcroot(){
 	
 }
 void differential :: forim(){
-	
+	double real,imag;
+	real = -x1/(2*x);
+	imag = sqrt(-D)/(2*x);
+	cout<<"Your answer is e^("<<real<<"x)*(cos("<<imag<<"x)+sin("<<imag<<"x)"<<endl;
 }
 int main(){
 	return 0;
