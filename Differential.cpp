@@ -37,10 +37,12 @@ double differential :: calcroot(){
     {
         y = (-x1+sqrt(D))/(2*x);
         y1 = (-x1-sqrt(D))/(2*x);
+        cout<<endl<<"Ae^("<<y<<"x)+Be^("<<y1<<"x)"<<endl;
     }
     else if (D == 0)
     {
         y = y1 = -x1/(2*x);
+        cout<<endl<<"(A+Bx)e^("<<y<<"x)"<<endl;
 
     }
 	
