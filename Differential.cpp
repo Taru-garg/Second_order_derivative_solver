@@ -54,6 +54,4 @@ void differential :: forim(double o){
 	imag = sqrt(-o)/(2*x);
 	cout<<"Your answer is e^("<<real<<"x)*(cos("<<imag<<"x)+sin("<<imag<<"x)"<<endl;
 }
-int main(){
-	return 0;
-}
+
