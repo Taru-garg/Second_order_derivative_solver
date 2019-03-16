@@ -17,7 +17,7 @@ class differential{
 };
 void differential :: initialize(){
 	double a,b,c;
-	cout<<"Enter the coefficients of y'' , y' and y";
+	cout<<"Enter the coefficients of y'' , y' and y"<<endl;
 	cin>>a>>b>>c;
 	x = a;
 	x1 = b;
@@ -38,22 +38,35 @@ void differential :: calcroot(){
     {
         y = (-x1+sqrt(m))/(2*x);
         y1 = (-x1-sqrt(m))/(2*x);
-        cout<<endl<<"Ae^("<<y<<"x)+Be^("<<y1<<"x)"<<endl;
+        cout<<endl<<"y="<<"Ae^("<<y<<"x)+Be^("<<y1<<"x)"<<endl;
     }
     else if (m == 0)
     {
         y = y1 = -x1/(2*x);
-        cout<<endl<<"(A+Bx)e^("<<y<<"x)"<<endl;
+        cout<<endl<<"y="<<"(A+Bx)e^("<<y<<"x)"<<endl;
 
     }
-	
 }
 void differential :: forim(double o){
 	double real,imag;
 	real = -x1/(2*x);
 	imag = sqrt(-o)/(2*x);
-	cout<<"Your answer is e^("<<real<<"x)*(cos("<<imag<<"x)+sin("<<imag<<"x)"<<endl;
+	cout<<"y=e^("<<real<<"x)*(Acos("<<imag<<"x)+Bsin("<<imag<<"x))"<<endl;
 }
-int main(){
-	return 0;
+
+int main()
+{
+int n,i;
+cout<<"\t\t\t\t\t\t\t\t\t\t\t CONDITION!! all equations be in Homogenous form"<<endl<<endl;
+cout<<"Enter Number of Differential Equations"<<endl;						//enter no differential equation
+cin>>n;
+differential equ[n];			//array of number of differential equation
+for(i=1;i<=n;i++)
+{
+	cout<<"Enter"<<" "<<i<<" differential's coffecients"<<endl;	
+	equ[i].initialize();      //calling to initilization function
+	equ[i].calcroot();			//calling to calcutate roots
+	cout<<"___________________________________________________________________________________________________________"<<endl;
+}
+return 0;
 }
