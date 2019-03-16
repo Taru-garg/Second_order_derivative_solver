@@ -13,7 +13,7 @@ class differential{
 		double calcroot();
 		double eval();
 		void print();
-		void initalize();
+		void initialize();
 };
 void differential :: initalize(){
 	double a,b,c;
@@ -25,12 +25,12 @@ void differential :: initalize(){
 }
 double differential :: calcD(){
 	double m;
-	m = (pow(x1,2) - (4*x*x2));
+	m = ((x1^2) - (4*x*x2));
 	return m;
 }
 double differential :: calcroot(){
-	double r1;
-	double r2;
+	calcD();
+	
 }
 int main(){
 	return 0;
