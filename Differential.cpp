@@ -10,11 +10,10 @@ class differential{
 		double D; //discriminant
 	public:
 		double calcD();
-		double calcroot();
-		double eval();
+		void calcroot();
 		void print();
 		void initialize();
-		void forim();
+		void forim(double);
 };
 void differential :: initialize(){
 	double a,b,c;
@@ -28,18 +27,20 @@ double differential :: calcD(){
 	D = (pow(x1,2) - (4*x*x2));
 	return D;
 }
-double differential :: calcroot(){
+void differential :: calcroot(){
 	calcD();
-	if(D<0){
-		 forim();
+	double m;
+	m = calcD();
+	if(m<0){
+		 forim(m);
 	}
-	if (D> 0)
+	if (m> 0)
     {
-        y = (-x1+sqrt(D))/(2*x);
-        y1 = (-x1-sqrt(D))/(2*x);
+        y = (-x1+sqrt(m))/(2*x);
+        y1 = (-x1-sqrt(m))/(2*x);
         cout<<endl<<"Ae^("<<y<<"x)+Be^("<<y1<<"x)"<<endl;
     }
-    else if (D == 0)
+    else if (m == 0)
     {
         y = y1 = -x1/(2*x);
         cout<<endl<<"(A+Bx)e^("<<y<<"x)"<<endl;
@@ -47,10 +48,10 @@ double differential :: calcroot(){
     }
 	
 }
-void differential :: forim(){
+void differential :: forim(double o){
 	double real,imag;
 	real = -x1/(2*x);
-	imag = sqrt(-D)/(2*x);
+	imag = sqrt(-o)/(2*x);
 	cout<<"Your answer is e^("<<real<<"x)*(cos("<<imag<<"x)+sin("<<imag<<"x)"<<endl;
 }
 int main(){
