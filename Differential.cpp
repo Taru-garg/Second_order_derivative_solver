@@ -15,7 +15,7 @@ class differential{
 		void print();
 		void initialize();
 };
-void differential :: initalize(){
+void differential :: initialize(){
 	double a,b,c;
 	cout<<"Enter the coefficients of y'' , y' and y";
 	cin>>a>>b>>c;
@@ -25,7 +25,7 @@ void differential :: initalize(){
 }
 double differential :: calcD(){
 	double m;
-	m = ((x1^2) - (4*x*x2));
+	m = (pow(x1,2) - (4*x*x2));
 	return m;
 }
 double differential :: calcroot(){
