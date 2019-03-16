@@ -13,5 +13,13 @@ class differential{
 		void print();
 		differential();
 };
+differential :: differential(){
+	double a,b,c;
+	cout<<"Enter the coefficients of y'' , y' and y";
+	cin>>a>>b>>c;
+	x = a;
+	x1 = b;
+	x2 = c;
+}
 
 
