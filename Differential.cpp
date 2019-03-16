@@ -14,6 +14,7 @@ class differential{
 		double eval();
 		void print();
 		void initialize();
+		void forim();
 };
 void differential :: initialize(){
 	double a,b,c;
@@ -24,12 +25,27 @@ void differential :: initialize(){
 	x2 = c;
 }
 double differential :: calcD(){
-	double m;
-	m = (pow(x1,2) - (4*x*x2));
-	return m;
+	D = (pow(x1,2) - (4*x*x2));
+	return D;
 }
 double differential :: calcroot(){
 	calcD();
+	if(D<0){
+		 forim();
+	}
+	if (D> 0)
+    {
+        y = (-x1+sqrt(D))/(2*x);
+        y1 = (-x1-sqrt(D))/(2*x);
+    }
+    else if (D == 0)
+    {
+        y = y1 = -x1/(2*x);
+
+    }
+	
+}
+void differential :: forim(){
 	
 }
 int main(){
