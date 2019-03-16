@@ -61,9 +61,9 @@ cout<<"\t\t\t\t\t\t\t\t\t\t\t CONDITION!! all equations be in Homogenous form"<<
 cout<<"Enter Number of Differential Equations"<<endl;						//enter no differential equation
 cin>>n;
 differential equ[n];			//array of number of differential equation
-for(i=1;i<=n;i++)
+for(i=0;i<n;++i)
 {
-	cout<<"Enter"<<" "<<i<<" differential's coffecients"<<endl;	
+	cout<<"Enter"<<" equation "<<i+1<<"'s"<<" differential's coffecients"<<endl;	
 	equ[i].initialize();      //calling to initilization function
 	equ[i].calcroot();			//calling to calcutate roots
 	cout<<"___________________________________________________________________________________________________________"<<endl;
