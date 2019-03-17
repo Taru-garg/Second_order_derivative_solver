@@ -65,37 +65,41 @@ class legendre : public homogeneous_differential
 			cout<<"Enter the value of coefficient of y"<<endl;
 			cin>>n3;
 		}
-		void new_eqn(){
+		void new_eqn()
+		{
 			n1 = pow(b1,2);
 			n2 = b1 - pow(b1,2);
 		}
-		double caclcD(){
+		double caclcD()
+		{
 			D = (pow(n2,2) - (4*n1*n3)); // b^2 - 4ac
 			return D;
 		}
-		void calcroot(){
-			double m;
+		void calcroot()
+		{	double m;
 			m = calcD();
-			if(m<0){
+			if(m<0)
+			{
 		 			forim(m);   //calling func() forim
-				}
-			else if (m> 0)
+			}
+			
+    		else if(m == 0)
+   			 {		
+        		y = y1 = -n2/(2*n1);
+        		cout<<endl<<"(A+B(ln("<<a1<<"+"<<b1<<"x))*e^(("<<"ln("<<a1<<"+"<<b1<<"x))/"<<1/y1<<")"<<endl;
+			}
+			else
     			{
        				 y = (-n2+sqrt(m))/(2*n1);     //calculating roots
        				 y1 = (-n2-sqrt(m))/(2*n1);
-        			cout<<endl<<"Ae^(ln("<<a1<<"+"<<b1<<"x))/"<<y<<"+"<<"Be^(ln("<<a1<<"+"<<b1<<"x))/"<<y1<<endl;
-    }
-    		else(m == 0)
-    {
-        		y = y1 = -n2/(2*n1);
-        		cout<<endl<<"(A+B(ln("<<b1<<"+"<<a1<"x))*e^("<<"ln("<<b1<<"+"<<a1<<"x))"<<endl;
-	}
+        			cout<<endl<<"Ae^(ln("<<a1<<"+"<<b1<<"x))/"<<y<<"+"<<"Be^(ln("<<a1<<"+"<<b1<<"x))/"<<1/y1<<endl;
+    			}
     }
 	void forim(double o){
 		double real,imag;
 		real = -n2/(2*n1);
 		imag = sqrt(-o)/(2*n1);
-		cout<<"y=e^("<<real<<"*ln("<<b1<<"+"<<a1<<"x))("<<"Acos("<<imag<<"ln("<<b1<<"+"<<a1<<"x))"<<"+ sin("<<imag<<"ln("<<b1<<"+"<<a1<<"x))"
+		cout<<"y=e^("<<real<<"*ln("<<a1<<"+"<<b1<<"x))("<<"Acos("<<imag<<"ln("<<a1<<"+"<<b1<<"x))"<<"+ sin("<<imag<<"ln("<<a1<<"+"<<b1<<"x))";
 		
 	}
 		
@@ -121,7 +125,6 @@ switch(c){
 		
 		break;
 	case 2:	//for legendre's differential equation
-		case 2:	//for legendre's differential equation
 			cout<<"Coefficient of y'' cannot be 0"<<endl;	
 			equn.initialize();      //calling to initilization function
 			equn.new_eqn();
