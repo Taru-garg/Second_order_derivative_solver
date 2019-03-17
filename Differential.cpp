@@ -79,23 +79,23 @@ class legendre : public homogeneous_differential
 			if(m<0){
 		 			forim(m);   //calling func() forim
 				}
-			if (m> 0)
+			else if (m> 0)
     			{
        				 y = (-n2+sqrt(m))/(2*n1);     //calculating roots
        				 y1 = (-n2-sqrt(m))/(2*n1);
-        			cout<<endl<<"y="<<"Ae^(ln("<<y<<"x))+Be^(ln("<<y1<<"x))"<<endl;
+        			cout<<endl<<"Ae^(ln("<<a1<<"+"<<b1<<"x))/"<<y<<"+"<<"Be^(ln("<<a1<<"+"<<b1<<"x))/"<<y1<<endl;
     }
-    		else if (m == 0)
+    		else(m == 0)
     {
-        	y = y1 = -n2/(2*n1);
-        	cout<<endl<<"y="<<"(A+Bx)e^(ln("<<y<<"x))"<<endl;
-		}
+        		y = y1 = -n2/(2*n1);
+        		cout<<endl<<"(A+B(ln("<<b1<<"+"<<a1<"x))*e^("<<"ln("<<b1<<"+"<<a1<<"x))"<<endl;
+	}
     }
 	void forim(double o){
 		double real,imag;
 		real = -n2/(2*n1);
 		imag = sqrt(-o)/(2*n1);
-		cout<<"y=e^(ln("<<real<<"x))*(Acos(ln("<<imag<<"x))+Bsin(ln("<<imag<<"x))"<<endl;  //printing answer
+		cout<<"y=e^("<<real<<"*ln("<<b1<<"+"<<a1<<"x))("<<"Acos("<<imag<<"ln("<<b1<<"+"<<a1<<"x))"<<"+ sin("<<imag<<"ln("<<b1<<"+"<<a1<<"x))"
 		
 	}
 		
