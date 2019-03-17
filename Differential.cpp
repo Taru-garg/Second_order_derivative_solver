@@ -10,49 +10,47 @@ class homogeneous_differential{
 		double y,y1; // storing values of roots
 		double D; //discriminant
 	public:
-		double calcD(); //calculating discriminant
-		void calcroot(); //calculating roots
-		void print(); //print func()
-		void initialize(); //function for taking input values
-		void forim(double); //for special case i.e of imaginary roots
-};
-void homogeneous_differential :: initialize(){
+	double calcD()
+	{
+		D = (pow(x1,2) - (4*x*x2)); // b^2 - 4ac //calculating discriminant
+		return D;
+	} 
+	void calcroot()
+	{
+		double m;
+		m = calcD();
+		if(m<0){
+			 forim(m);   //calling func() forim
+	}
+	if (m> 0)
+    {
+        y = (-x1+sqrt(m))/(2*x);     //calculating roots
+        y1 = (-x1-sqrt(m))/(2*x);
+        cout<<endl<<"y="<<"Ae^("<<y<<"x)+Be^("<<y1<<"x)"<<endl;  //calculating roots
+    }
+    else if (m == 0)
+    {
+        y = y1 = -x1/(2*x);
+        cout<<endl<<"y="<<"(A+Bx)e^("<<y<<"x)"<<endl;
+	}
+    }
+	void initialize()
+	{
 	double a,b,c;
 	cout<<"Enter the coefficients of y'' , y' and y"<<endl;
 	cin>>a>>b>>c;
 	x = a;
 	x1 = b;
 	x2 = c;
-}
-double homogeneous_differential :: calcD(){
-	D = (pow(x1,2) - (4*x*x2)); // b^2 - 4ac
-	return D;
-}
-void homogeneous_differential :: calcroot(){
-	double m;
-	m = calcD();
-	if(m<0){
-		 forim(m);   //calling func() forim
 	}
-	if (m> 0)
-    {
-        y = (-x1+sqrt(m))/(2*x);     //calculating roots
-        y1 = (-x1-sqrt(m))/(2*x);
-        cout<<endl<<"y="<<"Ae^("<<y<<"x)+Be^("<<y1<<"x)"<<endl;
-    }
-    else if (m == 0)
-    {
-        y = y1 = -x1/(2*x);
-        cout<<endl<<"y="<<"(A+Bx)e^("<<y<<"x)"<<endl;
-		}
-    }
-void homogeneous_differential :: forim(double o){
+	void forim(double o)  //printing answer //for special case i.e of imaginary roots
+	{
 	double real,imag;
 	real = -x1/(2*x);
 	imag = sqrt(-o)/(2*x);
-	cout<<"y=e^("<<real<<"x)*(Acos("<<imag<<"x)+Bsin("<<imag<<"x))"<<endl;  //printing answer
-	
-}
+	cout<<"y=e^("<<real<<"x)*(Acos("<<imag<<"x)+Bsin("<<imag<<"x))"<<endl; 
+	}
+};	
 class legendre : public homogeneous_differential
 { 
 	protected:
@@ -76,18 +74,19 @@ class legendre : public homogeneous_differential
 			return D;
 		}
 		void calcroot()
-		{	double m;
+		{
+			double m;
 			m = calcD();
 			if(m<0)
-			{
+				{
 		 			forim(m);   //calling func() forim
-			}
+				}
 			
     		else if(m == 0)
-   			 {		
+   			 	{		
         		y = y1 = -n2/(2*n1);
         		cout<<endl<<"(A+B(ln("<<a1<<"+"<<b1<<"x))*e^(("<<"ln("<<a1<<"+"<<b1<<"x))/"<<1/y1<<")"<<endl;
-			}
+				}
 			else
     			{
        				 y = (-n2+sqrt(m))/(2*n1);     //calculating roots
@@ -96,10 +95,10 @@ class legendre : public homogeneous_differential
     			}
     }
 	void forim(double o){
-		double real,imag;
-		real = -n2/(2*n1);
-		imag = sqrt(-o)/(2*n1);
-		cout<<"y=e^("<<real<<"*ln("<<a1<<"+"<<b1<<"x))("<<"Acos("<<imag<<"ln("<<a1<<"+"<<b1<<"x))"<<"+ sin("<<imag<<"ln("<<a1<<"+"<<b1<<"x))";
+			double real,imag;
+			real = -n2/(2*n1);
+			imag = sqrt(-o)/(2*n1);
+			cout<<"y=e^("<<real<<"*ln("<<a1<<"+"<<b1<<"x))("<<"Acos("<<imag<<"ln("<<a1<<"+"<<b1<<"x))"<<"+ sin("<<imag<<"ln("<<a1<<"+"<<b1<<"x))";
 		
 	}
 		
