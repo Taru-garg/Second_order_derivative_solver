@@ -5,7 +5,7 @@ using namespace std;
 
 class homogeneous_differential{
 	protected:
-		double a,b; //for legendre
+		double a1,b1; //for legendre
 		double x,x1,x2; //for entering values of coefficients y'' , y' and y
 		double y,y1; // storing values of roots
 		double D; //discriminant
@@ -55,15 +55,23 @@ void homogeneous_differential :: forim(double o){
 }
 class legendre : public homogeneous_differential
 { 
+	protected:
+		double n1,n2,n3;
 	public:
 		void initialize()
 		{ 
 			cout<<"Enter a and b ((a+bx)^2)y''"<<endl;
-			cin>>a>>b;
+			cin>>a1>>b1;
+			cout<<endl<<"Enter coefficients other than them(enter 1 if none)"<<endl;
 			homogeneous_differential :: initialize();
 		}
 		void new_eqn(){
-			
+			n1 = pow(b1,2)*x;
+			n2 = b1*x1 - pow(b1,2)*x1;
+		}
+		double caclcD(){
+			D = (pow(n2,2) - (4*n1*x2)); // b^2 - 4ac
+			return D;
 		}
 		
 };
