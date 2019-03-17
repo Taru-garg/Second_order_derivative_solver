@@ -51,6 +51,7 @@ void homogeneous_differential :: forim(double o){
 	real = -x1/(2*x);
 	imag = sqrt(-o)/(2*x);
 	cout<<"y=e^("<<real<<"x)*(Acos("<<imag<<"x)+Bsin("<<imag<<"x))"<<endl;  //printing answer
+	
 }
 class legendre : public homogeneous_differential
 { 
@@ -92,9 +93,10 @@ class legendre : public homogeneous_differential
     }
 	void forim(double o){
 		double real,imag;
-		real = -x1/(2*x);
-		imag = sqrt(-o)/(2*x);
-		cout<<"y=e^("<<real<<"x)*(Acos("<<imag<<"x)+Bsin("<<imag<<"x))"<<endl;  //printing answer
+		real = -n2/(2*n1);
+		imag = sqrt(-o)/(2*n1);
+		cout<<"y=e^(ln("<<real<<"x))*(Acos(ln("<<imag<<"x))+Bsin(ln("<<imag<<"x))"<<endl;  //printing answer
+		
 	}
 		
 };
