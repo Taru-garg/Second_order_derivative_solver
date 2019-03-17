@@ -5,6 +5,7 @@ using namespace std;
 
 class differential{
 	protected:
+		double a,b; //for legendre
 		double x,x1,x2; //for entering values of coefficients y'' , y' and y
 		double y,y1; // storing values of roots
 		double D; //discriminant
@@ -55,6 +56,15 @@ void differential :: forim(double o){
 class legendre : public differential
 { 
 	public:
+		void initialize()
+		{ 
+			cout<<"Enter a and b ((a+bx)^2)y''"<<endl;
+			cin>>a>>b;
+			differential :: initialize();
+		}
+		void new_eqn(){
+			
+		}
 		
 };
 int main()
@@ -63,25 +73,24 @@ int n,i,c;
 cout<<"\t\t\t\t\t\t\t\t\t\t\t CONDITION!! all equations be in Homogenous form"<<endl<<endl;
 cout<<"Enter Number of Differential Equations"<<endl;						//enter no differential equation
 cin>>n;
+differential equ;
+legendre equn;
+for(int i = 1;i<=n;i++){
 cout<<"Enter type of differential Equation"<<endl<<"1. General"<<endl<<"2. Legendre"<<endl;
 cin>>c;
-differential equ[n];
 switch(c){
-	case 1: //for general differential equation
-				//array of number of differential equation
-
-		for(i=0;i<n;++i)
-		{
-			cout<<"Enter"<<" equation "<<i+1<<"'s"<<" differential's coffecients"<<endl;
+	case 1:
+			cout<<"Enter"<<" equation "<<i<<"'s"<<" differential's coffecients"<<endl;
 			cout<<"Coefficient of y'' cannot be 0"<<endl;	
-			equ[i].initialize();      //calling to initilization function
-			equ[i].calcroot();			//calling to calcutate roots
+			equ.initialize();      //calling to initilization function
+			equ.calcroot();			//calling to calcutate roots
 			cout<<"___________________________________________________________________________________________________________"<<endl;
-		}
+		
 		break;
 	case 2:	//for legendre's differential equation
+	
 		break;
 }
-
+}
 return 0;
 }
