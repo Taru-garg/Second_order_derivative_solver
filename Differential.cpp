@@ -29,7 +29,6 @@ double homogeneous_differential :: calcD(){
 	return D;
 }
 void homogeneous_differential :: calcroot(){
-	calcD();
 	double m;
 	m = calcD();
 	if(m<0){
@@ -62,17 +61,41 @@ class legendre : public homogeneous_differential
 		{ 
 			cout<<"Enter a and b ((a+bx)^2)y''"<<endl;
 			cin>>a1>>b1;
-			cout<<endl<<"Enter coefficients other than them(enter 1 if none)"<<endl;
-			homogeneous_differential :: initialize();
+			cout<<"Enter the value of coefficient of y"<<endl;
+			cin>>n3;
 		}
 		void new_eqn(){
-			n1 = pow(b1,2)*x;
-			n2 = b1*x1 - pow(b1,2)*x1;
+			n1 = pow(b1,2);
+			n2 = b1 - pow(b1,2);
 		}
 		double caclcD(){
-			D = (pow(n2,2) - (4*n1*x2)); // b^2 - 4ac
+			D = (pow(n2,2) - (4*n1*n3)); // b^2 - 4ac
 			return D;
 		}
+		void calcroot(){
+			double m;
+			m = calcD();
+			if(m<0){
+		 			forim(m);   //calling func() forim
+				}
+			if (m> 0)
+    			{
+       				 y = (-n2+sqrt(m))/(2*n1);     //calculating roots
+       				 y1 = (-n2-sqrt(m))/(2*n1);
+        			cout<<endl<<"y="<<"Ae^(ln("<<y<<"x))+Be^(ln("<<y1<<"x))"<<endl;
+    }
+    		else if (m == 0)
+    {
+        	y = y1 = -n2/(2*n1);
+        	cout<<endl<<"y="<<"(A+Bx)e^(ln("<<y<<"x))"<<endl;
+		}
+    }
+	void forim(double o){
+		double real,imag;
+		real = -x1/(2*x);
+		imag = sqrt(-o)/(2*x);
+		cout<<"y=e^("<<real<<"x)*(Acos("<<imag<<"x)+Bsin("<<imag<<"x))"<<endl;  //printing answer
+	}
 		
 };
 int main()
