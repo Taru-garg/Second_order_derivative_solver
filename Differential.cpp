@@ -73,25 +73,28 @@ class legendre : public homogeneous_differential
 			D = (pow(n2,2) - (4*n1*n3)); // b^2 - 4ac
 			return D;
 		}
-		void calcroot(){
+		void calcroot()
+	{
 			double m;
 			m = calcD();
-			if(m<0){
+			if(m<0)
+				{
 		 			forim(m);   //calling func() forim
 				}
 			if (m> 0)
     			{
        				 y = (-n2+sqrt(m))/(2*n1);     //calculating roots
        				 y1 = (-n2-sqrt(m))/(2*n1);
-        			cout<<endl<<"y="<<"Ae^(ln("<<y<<"x))+Be^(ln("<<y1<<"x))"<<endl;
-    }
+        			cout<<endl<<"y="<<"Ae^(ln("<<y+a1<<"x))+Be^(ln("<<y1<<"x))"<<endl;
+			    }
     		else if (m == 0)
-    {
-        	y = y1 = -n2/(2*n1);
-        	cout<<endl<<"y="<<"(A+Bx)e^(ln("<<y<<"x))"<<endl;
-		}
+			    {
+    	    	y = y1 = -n2/(2*n1);
+        	cout<<endl<<"y="<<"(A+Bx)e^(ln("<<y+a1<<"x))"<<endl;
+				}
     }
-	void forim(double o){
+		void forim(double o)
+	{
 		double real,imag;
 		real = -n2/(2*n1);
 		imag = sqrt(-o)/(2*n1);
@@ -121,7 +124,12 @@ switch(c){
 		
 		break;
 	case 2:	//for legendre's differential equation
-	
+			cout<<"Coefficient of y'' cannot be 0"<<endl;	
+			equn.initialize();      //calling to initilization function
+			equn.new_eqn();
+			equn.calcroot();			//calling to calcutate roots
+			cout<<"___________________________________________________________________________________________________________"<<endl;
+		
 		break;
 }
 }
