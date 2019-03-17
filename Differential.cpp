@@ -121,7 +121,13 @@ switch(c){
 		
 		break;
 	case 2:	//for legendre's differential equation
-	
+		case 2:	//for legendre's differential equation
+			cout<<"Coefficient of y'' cannot be 0"<<endl;	
+			equn.initialize();      //calling to initilization function
+			equn.new_eqn();
+			equn.calcroot();			//calling to calcutate roots
+			cout<<"___________________________________________________________________________________________________________"<<endl;
+		
 		break;
 }
 }
