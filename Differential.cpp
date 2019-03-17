@@ -76,7 +76,7 @@ class legendre : public homogeneous_differential
 		void calcroot()
 		{
 			double m;
-			m = calcD();
+			m = calcD();				//calling function for value of D
 			if(m<0)
 				{
 		 			forim(m);   //calling func() forim
@@ -94,7 +94,7 @@ class legendre : public homogeneous_differential
         			cout<<endl<<"Ae^(ln("<<a1<<"+"<<b1<<"x))/"<<y<<"+"<<"Be^(ln("<<a1<<"+"<<b1<<"x))/"<<1/y1<<endl;
     			}
     }
-	void forim(double o){
+	void forim(double o){				//imag value D (roots for legendray) function
 			double real,imag;
 			real = -n2/(2*n1);
 			imag = sqrt(-o)/(2*n1);
@@ -106,7 +106,7 @@ class legendre : public homogeneous_differential
 int main()
 {
 int n,i,c;
-cout<<"\t\t\t\t\t\t\t\t\t\t\t CONDITION!! all equations be in Homogenous form"<<endl<<endl;
+cout<<"\t\t\t\t\t\t\t\t\t\t CONDITION!! all equations must be in Homogenous or Legendre form"<<endl<<endl;
 cout<<"Enter Number of Homogeneous differential Equations"<<endl;						//enter num differential equation
 cin>>n;
 homogeneous_differential equ;
@@ -129,8 +129,11 @@ switch(c){
 			equn.new_eqn();
 			equn.calcroot();			//calling to calcutate roots
 			cout<<"___________________________________________________________________________________________________________"<<endl;
-		
 		break;
+		default:
+			cout<<"ERROR"<<endl;
+			cout<<"Please enter correct choice"<<endl;	
+		break;		
 }
 }
 return 0;
