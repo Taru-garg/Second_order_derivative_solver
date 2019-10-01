@@ -10,6 +10,4 @@ If a closed-form expression for the solution is not available, the solution may 
 
 ### Functionalities 
 
-There are infinite possibilities with differential equations though some of the most common differential equations are of Second Order. Though there are two types of Second order differential equations (Homogeneous and Non homogeneous) this program can solve only Second Order Homogeneous differential equations.
-
-Currently it can solve second order homogeneous differential equations having constant coefficient form, legendre and cauchy-euler form.
+There are infinite possibilities with differential equations though some of the most common differential equations are of Second Order. Though there are two types of Second order differential equations (Homogeneous and Non homogeneous) this program can solve only Second Order Homogeneous differential equations. Considering the whole new set of challanges involved in solving non homogeneous type differential equations, currently this program can solve second order homogeneous differential equations having constant coefficient form, legendre and cauchy-euler form.
