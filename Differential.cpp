@@ -106,39 +106,35 @@ class legendre : public homogeneous_differential
 int main()
 {
 int n,i,c;
-cout<<"\t\t\t\t\t\t\t\t\t\t CONDITION!! all equations must be in Homogenous or Legendre form"<<endl<<endl;
+cout<<"\t\t\t\t\t\t\t\t\t\t CONDITION!! All equations must be in Homogenous or Legendre form"<<endl<<endl;
 cout<<"Enter Number of Homogeneous differential Equations"<<endl;						//enter num differential equation
 cin>>n;
 homogeneous_differential equ;
 legendre equn;
-for(int i = 1;i<=n;i++){
-cout<<"Enter type of Homogeneous differential Equation"<<endl<<"1. General"<<endl<<"2. Legendre"<<endl;
-cin>>c;
-switch(c){
-	case 1:
+for(int i = 1;i<=n;i++)
+{
+	cout<<"Enter type of Homogeneous differential Equation"<<endl<<"1. General"<<endl<<"2. Legendre"<<endl;
+	cin>>c;
+	switch(c){
+		case 1:
 			cout<<"Enter"<<" equation "<<i<<"'s"<<"Differential's coffecients"<<endl;
 			cout<<"Coefficient of y'' cannot be 0"<<endl;	
 			equ.initialize();      //calling to initilization function
 			equ.calcroot();			//calling to calcutate roots
 			cout<<"___________________________________________________________________________________________________________"<<endl;
-		
-		break;
-	case 2:	//for legendre's differential equation
+			break;
+		case 2:	//for legendre's differential equation
 			cout<<"Coefficient of y'' cannot be 0"<<endl;	
 			equn.initialize();      //calling to initilization function
 			equn.new_eqn();
 			equn.calcroot();			//calling to calcutate roots
 			cout<<"___________________________________________________________________________________________________________"<<endl;
-		break;
+			break;
 		default:
 			cout<<"ERROR"<<endl;
 			cout<<"Please enter correct choice"<<endl;	
-		break;		
+			break;		
+	}
 }
+return 0;	
 }
-<<<<<<< HEAD
-
-=======
-return 0;
-}
->>>>>>> f3f406401c8148ae8118e0dd55dd1b1b160e9341
